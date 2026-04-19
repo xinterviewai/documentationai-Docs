@@ -1,0 +1,123 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in Xinterview AI to stay informed on platform enhancements.
+---
+
+## Recent Updates
+
+Stay current with Xinterview AI's evolution. Review the latest releases below, ordered newest first. Each update highlights key changes to help you leverage new capabilities in your hiring workflows.
+
+<Update label="2024-10-15" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added AI-powered question generator: Automatically craft tailored interview questions based on job descriptions.
+- Introduced bulk candidate import from CSV: Upload and invite hundreds of candidates in one step.
+
+## Improvements
+
+- Enhanced video streaming quality with adaptive bitrate for better performance on low-bandwidth connections.
+- Dashboard now loads `>30%` faster with optimized query caching.
+
+## Bug Fixes
+
+- Fixed scheduling conflicts when candidates select overlapping time slots.
+- Resolved issue where invite links expired prematurely for group interviews.
+
+</Update>
+
+<Update label="2024-09-20" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched real-time collaboration: Interviewers can join live sessions and take shared notes.
+- Integrated webhook support for candidate status updates: Receive notifications at your endpoint.
+
+## Breaking Changes
+
+- Updated API authentication to use JWT tokens instead of API keys. Migrate by generating new tokens in settings.
+
+## Improvements
+
+- Candidate scoring algorithm improved accuracy by `25%` with new ML models.
+
+## Bug Fixes
+
+- Corrected video recording failures on certain mobile browsers.
+- Fixed export issues with interview transcripts containing special characters.
+
+Here's an example webhook payload for the new feature:
+
+````json
+{
+  "event": "candidate.completed",
+  "interview_id": "int_1234567890",
+  "candidate_email": "candidate@example.com",
+  "score": 8.5,
+  "timestamp": "2024-09-20T10:30:00Z"
+}
+````
+
+</Update>
+
+<Update label="2024-08-10" description="v1.9.0" tags={["bugfix", "security"]}>
+
+## Improvements
+
+- One-click candidate outreach now supports personalized email templates.
+- Analytics dashboard adds filters for interview completion rates by job role.
+
+## Bug Fixes
+
+- Patched security vulnerability in invite link generation (CWE-200).
+- Fixed crash when processing videos longer than `60 minutes`.
+
+## Security
+
+- Enforced HTTPS-only for all API endpoints.
+
+</Update>
+
+## Upcoming Roadmap
+
+Discover what's next for Xinterview AI. These features are in active development.
+
+<Columns cols={2}>
+  <Card title="AI Screening" icon="zap" href="/features/ai-screening">
+    Automated initial candidate filtering based on video responses and keywords.
+  </Card>
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Native connectors for ATS like Greenhouse and Lever.
+  </Card>
+  <Card title="Mobile App" icon="smartphone" href="/mobile">
+    Full interview management on iOS and Android.
+  </Card>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="/analytics">
+    Predictive hiring success metrics and team performance insights.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Check your account notifications or subscribe to our RSS feed at `https://xinterview.ai/changelog.xml` for instant alerts on new releases.
+</Callout>
+
+## Upgrade Instructions
+
+<Steps>
+  <Step title="Review Changes" icon="book-open">
+    Scan the release notes above for breaking changes.
+  </Step>
+  <Step title="Backup Data" icon="database">
+    Export your interviews via the dashboard.
+  </Step>
+  <Step title="Update Integrations" icon="settings">
+    Regenerate tokens if affected by auth changes.
+  </Step>
+  <Step title="Test Features" icon="play">
+    Create a test interview to verify new capabilities.
+  </Step>
+</Steps>
+
+<Expandable title="Older Versions" default-open="false">
+  For releases prior to v1.9.0, view the [full archive](/changelog-archive).
+</Expandable>

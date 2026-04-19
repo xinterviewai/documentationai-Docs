@@ -1,0 +1,133 @@
+---
+title: Integrations and Workflows
+description: Connect Xinterview AI with your existing tools to enhance your recruitment process and automate workflows seamlessly.
+---
+
+## Overview
+
+Xinterview AI supports seamless integrations with popular tools to streamline your hiring process. You can connect applicant tracking systems (ATS), set up webhooks for real-time updates, and build custom workflows for team collaboration. These integrations save time by automating candidate notifications, syncing interview data, and triggering actions across your tech stack.
+
+<Callout kind="tip">
+  Start with our pre-built integrations for quick setup, then explore webhooks for advanced automation.
+</Callout>
+
+## Popular Integrations
+
+Discover ready-to-use connections that fit common recruitment workflows.
+
+<Columns cols={3}>
+  <Card title="Zapier" icon="zap" href="https://zapier.com/apps/xinterview/integrations">
+    Automate workflows between Xinterview AI and 5000+ apps like Slack, Google Sheets, and email.
+  </Card>
+  <Card title="Slack" icon="message-circle" href="/slack-integration">
+    Get instant notifications for new interviews, completions, and candidate feedback.
+  </Card>
+  <Card title="Greenhouse" icon="package" href="/greenhouse-ats">
+    Sync candidates and interview results directly with your ATS.
+  </Card>
+</Columns>
+
+## Setting Up Webhooks
+
+Webhooks enable real-time notifications when events occur, such as interview completion or candidate responses. Follow these steps to configure one.
+
+<Steps>
+  <Step title="Create Webhook" icon="settings">
+    Log in to your Xinterview AI dashboard at `https://app.xinterview.ai`. Navigate to Settings > Webhooks > New Webhook.
+  </Step>
+  <Step title="Configure Endpoint" icon="link">
+    Enter your endpoint URL, e.g., `https://your-webhook-url.com/xinterview`. Select events like `interview.completed`.
+  </Step>
+  <Step title="Test and Save" icon="play">
+    Send a test event and verify receipt. Save the webhook.
+  </Step>
+</Steps>
+
+### Webhook Payload Example
+
+Here's a sample payload for an `interview.completed` event:
+
+<Response show-lines="false">
+```json
+{
+  "event": "interview.completed",
+  "interview_id": "int_1234567890",
+  "candidate": {
+    "email": "candidate@example.com",
+    "name": "Jane Doe"
+  },
+  "score": 85,
+  "video_url": "https://app.xinterview.ai/interviews/int_1234567890/video"
+}
+```
+</Response>
+
+<ParamField header="Xinterview-Signature" param-type="string" required="true">
+  HMAC SHA256 signature for verifying webhook authenticity. Use your webhook secret.
+</ParamField>
+
+## Connecting Applicant Tracking Systems
+
+Choose your ATS and follow the dedicated setup.
+
+<Tabs>
+  <Tab title="Greenhouse" icon="package">
+    <Steps>
+      <Step title="Harvest API Key" icon="key">
+        Generate a Harvest API token in Greenhouse > Dev Center > API Credential Management.
+      </Step>
+      <Step title="Connect in Xinterview" icon="link">
+        In Xinterview dashboard, go to Integrations > ATS > Greenhouse. Paste your token and board ID.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Lever" icon="users">
+    Use OAuth 2.0 to connect. Authorize Xinterview AI in Lever settings.
+    
+    ```javascript
+    const response = await fetch('https://api.lever.co/v0/integrations', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer YOUR_LEVER_TOKEN' }
+    });
+    ```
+  </Tab>
+  <Tab title="Workable" icon="briefcase">
+    Add Xinterview as a sourcing channel in Workable > Settings > Sourcing.
+  </Tab>
+</Tabs>
+
+## Customizing Workflows
+
+Tailor integrations for your team's needs, such as auto-sharing scores or triggering follow-ups.
+
+<Expandable title="Advanced Workflow Example" default-open="false">
+  Combine webhooks with Zapier to post interview summaries to Slack and update Google Sheets.
+  
+  ```mermaid
+  sequenceDiagram
+      participant U as User
+      participant X as Xinterview
+      participant W as Webhook
+      participant Z as Zapier
+      participant S as Slack
+      
+      U->>X: Complete Interview
+      X->>W: Send Payload
+      W->>Z: Trigger Zap
+      Z->>S: Post Summary
+  ```
+</Expandable>
+
+<Callout kind="alert">
+  Always validate incoming webhooks using the `Xinterview-Signature` header to prevent unauthorized access.
+</Callout>
+
+## Next Steps
+
+<Card title="Explore API" icon="code" href="/api-reference">
+  Build custom integrations using our REST API.
+</Card>
+
+<Card title="Team Collaboration" icon="users" href="/workflows">
+  Set up shared dashboards and permissions.
+</Card>

@@ -1,0 +1,121 @@
+---
+title: Core Features of Xinterview AI
+description: Explore the essential tools that make Xinterview AI a powerful hiring platform, from question crafting to candidate review.
+---
+
+## Overview
+
+Xinterview AI provides a complete suite of tools to streamline your video interview process. You craft targeted questions, invite candidates effortlessly, review submissions collaboratively, and leverage AI for smarter hiring decisions. These features save time and improve hire quality across teams.
+
+<Columns cols={2}>
+  <Card title="Craft Questions" icon="edit-3" href="#craft-questions">
+    Design custom video prompts tailored to your roles.
+  </Card>
+  <Card title="Candidate Outreach" icon="send" href="#outreach">
+    Share invites via email or links with one click.
+  </Card>
+  <Card title="Review Submissions" icon="video" href="#review">
+    Watch videos, score responses, and collaborate with your team.
+  </Card>
+  <Card title="AI Insights" icon="zap" href="#insights">
+    Get automated analysis and recommendations.
+  </Card>
+</Columns>
+
+## Craft Your Interview Questions
+
+Create questions that reveal candidate fit. You select from templates or build custom ones, setting time limits and required responses.
+
+<Steps>
+  <Step title="Choose Template" icon="book-open">
+    Start with role-specific templates like "Software Engineer" or "Sales Lead".
+  </Step>
+  <Step title="Customize Prompts" icon="edit">
+    Add your questions. Example: "Describe how you handled a difficult client."
+  </Step>
+  <Step title="Set Parameters" icon="settings">
+    Configure response time (e.g., 2 minutes) and video quality requirements.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use open-ended questions to assess soft skills alongside technical ones.
+</Callout>
+
+## Manage Candidate Outreach and Responses
+
+Invite candidates seamlessly and track their submissions.
+
+<Tabs>
+  <Tab title="Email Invite" icon="mail">
+    Upload candidate emails and send personalized invites from your dashboard at `https://app.xinterview.ai`.
+    
+    ```
+    Subject: Video Interview for [Role] at [Company]
+    
+    Hi [Name],
+    
+    Complete your 3-question video interview here: [Unique Link]
+    ```
+  </Tab>
+  <Tab title="Share Link" icon="link">
+    Generate a shareable link for job boards or messaging apps.
+    
+    Example link: `https://app.xinterview.ai/interview/abc123`
+  </Tab>
+  <Tab title="Bulk Upload" icon="upload">
+    Import CSV with emails and names for mass invites.
+    
+    ```
+    name,email
+    John Doe,john@example.com
+    Jane Smith,jane@example.com
+    ```
+  </Tab>
+</Tabs>
+
+## Review Video Submissions and Collaborate
+
+Access a centralized dashboard to watch videos, add notes, and score candidates.
+
+<Expandable title="Team Collaboration Features" default-open="true">
+  Share interviews with teammates for feedback.
+  
+  - Assign reviewers
+  - Add private/public notes
+  - Use rating scales (1-5 stars)
+  
+  Filter by score, completion status, or AI flags.
+</Expandable>
+
+<Expandable title="Advanced Review Tools">
+  - Playback speed control
+  - Timestamped notes
+  - Side-by-side video comparison
+</Expandable>
+
+## AI Insights for Better Decisions
+
+Xinterview AI analyzes responses automatically, highlighting key traits.
+
+| Insight Type | Description | Benefit |
+|--------------|-------------|---------|
+| Sentiment Analysis | Detects enthusiasm and confidence | Identifies cultural fit |
+| Keyword Matching | Matches skills from your job description | Speeds technical screening |
+| Consistency Check | Flags contradictory answers | Reduces bias in reviews |
+| Ranking Score | Auto-ranks top candidates | Prioritizes interviews |
+
+<Callout kind="success">
+  AI insights integrate with your ATS via webhooks at `https://your-webhook-url.com/xinterview`.
+</Callout>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your first interview in 5 minutes.
+  </Card>
+  <Card title="Pricing" icon="dollar-sign" href="/pricing" target="_blank">
+    Choose a plan that fits your hiring volume.
+  </Card>
+</Columns>
