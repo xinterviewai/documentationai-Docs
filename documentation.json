@@ -103,6 +103,10 @@
               {
                 "title": "Schedule an Interview",
                 "path": "help-center/guides/schedule-interview"
+              },
+              {
+                "title": "Creating a Video Interview",
+                "path": "help-center/guides/creating-a-video-interview"
               }
             ]
           }
