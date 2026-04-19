@@ -1,5 +1,5 @@
 {
-  "name": "Xinterview AI",
+  "name": "Xinterview AI test 1",
   "colors": {
     "light": {
       "brand": "#3B82F6"
@@ -9,9 +9,8 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Documentation",
         "icon": "book",
         "groups": [
           {
@@ -52,20 +51,19 @@
               }
             ]
           }
-        ]
+        ],
+        "language": "Documentation"
       },
       {
-        "tab": "API Reference",
         "icon": "code",
         "groups": [
           {
-            "group": "Endpoints",
-            "openapi": "api-reference/openapi.yaml"
+            "group": "Endpoints"
           }
-        ]
+        ],
+        "language": "API Reference"
       },
       {
-        "tab": "Help Center",
         "icon": "help-circle",
         "pages": [
           {
@@ -101,19 +99,39 @@
             "expandable": false,
             "pages": [
               {
+                "title": "Help Center/guides/create Job Position",
+                "path": "help-center/guides/create-job-position"
+              },
+              {
+                "title": "Help Center/guides/craft Video Interview Questions",
+                "path": "help-center/guides/craft-video-interview-questions"
+              },
+              {
+                "title": "Help Center/guides/add Team Members",
+                "path": "help-center/guides/add-team-members"
+              },
+              {
+                "title": "Editing a Job",
+                "path": "help-center/guides/editing-a-job"
+              },
+              {
                 "title": "Schedule an Interview",
                 "path": "help-center/guides/schedule-interview"
               },
               {
                 "title": "Creating a Video Interview",
                 "path": "help-center/guides/creating-a-video-interview"
+              },
+              {
+                "title": "Add and invite candidates",
+                "path": "help-center/guides/add-and-invite-candidates"
               }
             ]
           }
-        ]
+        ],
+        "language": "Help Center"
       },
       {
-        "tab": "Changelog",
         "icon": "clock",
         "pages": [
           {
@@ -121,8 +139,10 @@
             "path": "changelog",
             "icon": "history"
           }
-        ]
+        ],
+        "language": "Changelog"
       }
     ]
-  }
+  },
+  "title": "Xinterview AI test 1"
 }
